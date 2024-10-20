@@ -1,0 +1,12 @@
+﻿using Kish_AndreiCezar_Lab2.Models;
+
+namespace Kish_AndreiCezar_Lab2.Pages
+{
+    public class Authors
+    {
+        public int ID { get; set; }
+        public string FirstName { get; set; }
+        public string LastName { get; set; }
+        public ICollection<Book>? Books { get; set; }
+    }
+}

@@ -9,5 +9,7 @@ namespace Kish_AndreiCezar_Lab2.Models
         public string FirstName { get; set; }
 
         public string LastName { get; set; }
+
+        public ICollection<Book> Books { get; set; }
     }
 }

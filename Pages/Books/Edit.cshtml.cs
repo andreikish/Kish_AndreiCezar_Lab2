@@ -22,6 +22,7 @@ namespace Kish_AndreiCezar_Lab2.Pages.Books
 
         [BindProperty]
         public Book Book { get; set; } = default!;
+        public SelectList AuthorList { get; set; }
 
         public async Task<IActionResult> OnGetAsync(int? id)
         {
@@ -36,6 +37,7 @@ namespace Kish_AndreiCezar_Lab2.Pages.Books
                 return NotFound();
             }
             Book = book;
+            AuthorList = new SelectList(await _context.Author.ToListAsync(), "ID", "FirstName");
             ViewData["PublisherID"] = new SelectList(_context.Set<Publisher>(), "ID", "PublisherName");
             return Page();
         }
